@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact DYRT</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe8a3;
+        }
+
+        .contact-section {
+            display: flex;
+            background-color: #01c6be;
+            padding: 50px;
+            border-radius: 15px;
+            width: 50%;
+            max-width: 1000px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .header {
+            background-color: black;
+            color: white;
+            padding: 5px 0; /* Reduced padding for a smaller height */
+            width: 100%; /* Full width */
+            text-align: center;
+            border-radius: 15px 15px 0 0; /* Rounded top corners */
+            position: absolute; /* Absolute positioning */
+            top: -20px; /* Position above the contact section */
+            left: 0; /* Align to the left */
+            z-index: 0; /* Behind the contact section */
+            font-size: 18px; /* Adjusted font size */
+        }
+
+        .contact-info {
+            flex: 1;
+            color: white;
+            margin-right: 20px; /* Space between info and form */
+            z-index: 1; /* Ensure it is above the background */
+        }
+
+        .contact-info h1 {
+            font-size: 45px;
+            margin-bottom: 10px;
+            color: black; /* Changed color to black for "DID YOU RUN TODAY?" */
+        }
+
+        .contact-info h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: white; /* Keep "SPORTS & WELLNESS CLUB" white */
+            font-weight: normal; /* Remove boldness */
+        }
+
+        .contact-info .contact-us {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: black; /* Changed color to black for "CONTACT US" */
+            font-weight: bold; /* Bold the "CONTACT US" text */
+        }
+
+        .contact-info p {
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            margin-right: 10px;
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px; /* Maintain padding for white box */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: fit-content; /* Adjust height to fit content */
+            position: relative; /* Ensure it sits above the header */
+            z-index: 2; /* Ensure it is above the header */
+        }
+
+        .contact-form input {
+            width: calc(100% - 30px); /* Adjusted to fit inside white box */
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box; /* Ensures padding and border are included in width */
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 15px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="contact-section">
+        <div class="header">
+            <h1>    </h1>
+        </div>
+        <div class="contact-info">
+            <h1><a href="index.html">DID YOU RUN TODAY?</a></h1>
+            <h2>SPORTS & WELLNESS CLUB</h2> <!-- No boldness -->
+            <h2 class="contact-us">CONTACT US</h2> <!-- Bolded "CONTACT US" -->
+            <p>Have any questions or want to join our next run? Contact us today – we’d love to hear from you!</p>
+            <div class="social-icons">
+                <img src="images/facebook.png" alt="Icon 1">
+                <img src="images/reddit.png" alt="Icon 2">
+            </div>
+        </div>
+        <div class="contact-form">
+            <input type="text" placeholder="Name"> <!-- Placeholder changed -->
+            <input type="text" placeholder="Surname"> <!-- Placeholder changed -->
+            <input type="email" placeholder="Email"> <!-- Placeholder changed -->
+            <button>Submit</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports & Wellness Club</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background-color: white;
+        }
+
+        /* Updated Header Styles */
+        .nav-bar {
+            background-color: #30b1c6;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-bar .logo {
+            margin-left: 20px;
+            font-size: 24px;
+            color: white;
+        }
+
+        .nav-bar .logo img {
+            width: 75px;
+            vertical-align: middle;
+        }
+
+        .nav-bar nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .nav-bar nav ul li a, .nav-bar .upcoming-races-btn {
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            padding: 10px;
+        }
+
+        .nav-bar .upcoming-races-btn {
+            background-color: #f5f5f5;
+            color: #333;
+            border: none;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-bar .upcoming-races-btn:hover {
+            background-color: #000;
+            color: white;
+        }
+
+        .nav-bar .auth-buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .nav-bar .auth-buttons button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .nav-bar .auth-buttons .register {
+            background-color: #000;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .nav-bar .auth-buttons .sign-in {
+            background-color: #f5f5f5;
+            color: #333;
+            border-radius: 10px;
+        }
+
+        .header {
+            background-color: #ffe8a3;
+            text-align: center;
+            padding: 30px 0;
+            height: auto;
+        }
+
+        .header h1 {
+            font-size: 56px;
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 28px;
+            color: #666;
+            margin: 5px 0 0;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 50vh;
+            object-fit: cover;
+        }
+
+        .section {
+            padding: 30px;
+            background-color: #01c6be;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            height: auto;
+        }
+
+        .section div {
+            width: 48%;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        .section button {
+            padding: 15px 30px;
+            background-color: #000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 10px;
+        }
+
+        .event-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .call-to-action {
+            background-color: #f9dd7a;
+            text-align: center;
+            padding: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            height: 15vh;
+        }
+
+        .footer {
+            background-color: #f9dd7a;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .social-media, .email-signup {
+            flex: 1;
+            margin: 20px;
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .social-media h3, .email-signup h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .email-input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .email-input input {
+            padding: 10px;
+            font-size: 16px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .email-input button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .footer-text {
+            flex: 1;
+            margin: 20px;
+            min-width: 250px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .footer-text p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 992px) {
+            .section {
+                padding: 40px 30px;
+                flex-direction: column;
+                height: auto;
+            }
+
+            .section div {
+                width: 100%;
+                margin-bottom: 40px;
+            }
+
+            .event-image {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 36px;
+            }
+
+            .header p {
+                font-size: 18px;
+            }
+
+            .banner img {
+                height: 300px;
+            }
+
+            .section h2 {
+                font-size: 22px;
+            }
+
+            .section p {
+                font-size: 16px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-media, .email-signup, .footer-text {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- New Navigation Bar -->
+        <div class="nav-bar">
+            <div class="logo">
+                <img src="images/dyrt.png" alt="Logo"> <!-- Use your logo here -->
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <button class="upcoming-races-btn">UPCOMING RACES</button>
+                    </li>
+                    <li><a href="#">Solutions</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="sign-in">Sign in</button>
+                <button class="register">Register</button>
+            </div>
+        </div>
+
+        <!-- Header Section -->
+        <div class="header">
+            <h1>DID YOU RUN TODAY?</h1>
+            <p>SPORTS & WELLNESS CLUB</p>
+        </div>
+
+        <!-- Banner Image -->
+        <div class="banner">
+            <img src="images/banner.jpg" alt="Running Event Banner">
+        </div>
+
+        <!-- Events Section -->
+        <div class="section">
+            <div>
+                <img src="images/sfran.JPG" alt="San Francisco Event" class="event-image">
+                <h2>SAN FRANCISCO | PIER 30 & 32 <br> SEPTEMBER 7, 2025 | 9AM</h2>
+                <p>Experience the thrill of the run and the rhythm of the music at the San Francisco waterfront, nestled between Pier 30 and 32, under the majestic Bay Bridge. Join us for an exhilarating run along the waterfront, followed by a vibrant festival of food, music, and celebration!</p>
+                <button>REGISTER NOW!</button>
+            </div>
+            <div>
+                <img src="images/seattle.JPG" alt="Seattle" class="event-image">
+                <h2>SEATTLE | GAS WORKS PARK <br> SEPTEMBER 14, 2024 | 9AM</h2>
+                <p>Run through the iconic streets of Los Angeles, where the energy of the city meets the pasGet ready to lace up your running shoes and groove to the beat at the ultimate fusion of fitness and music on the Seattle waterfront at Gas Works Park. Join us for a thrilling run along the scenic waterfront followed by a music festival like no other. Don't miss your chance to be part of this epic celebration of music, fitness, and community.</p>
+                <button>REGISTER NOW!</button>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            <div class="footer-content">
+                <!-- Social Media Section -->
+                <div class="social-media">
+                    <h3>GET SOCIAL WITH US</h3>
+                    <div class="icons">
+                        <img src="images/facebook.png" alt="Facebook Icon" class="social-icon">
+                        <img src="images/reddit.png" alt="Reddit Icon" class="social-icon">
+                    </div>
+                </div>
+
+                <!-- Email Subscription Section -->
+                <div class="email-signup">
+                    <h3>Get Notified of Exclusive Updates</h3>
+                    <div class="email-input">
+                        <input type="email" placeholder="Enter your email address">
+                        <button>RSVP</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Text Section -->
+            <div class="footer-text">
+                <p>Did You Run Today Run Club offers a variety of training plans, from speed workouts to long slow distance running. We offer beginner-friendly tips and tricks to professional training that is approved by many.</p>
+                <p>This isn’t an ordinary running club. It’s DYRT’s Run Club. We run hard with our friends and party even harder after.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
